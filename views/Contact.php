@@ -6,7 +6,7 @@ require_once('./views/inc/header.php')
 
 ?>
 
-<h1>This is contact content</h1>
+<p1>This is contact content</p1>
     
 <?php
 

@@ -6,7 +6,7 @@ require_once('./views/inc/header.php')
 
 ?>
 
-<h1>This is about content</h1>
+<p1>This is about content</p1>
     
 <?php
 

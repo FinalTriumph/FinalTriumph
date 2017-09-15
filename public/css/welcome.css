@@ -18,11 +18,16 @@ a {
     background-color: rgba(240, 240, 240, 0.8);
     min-height: 100vh;
     color: #444;
+    display: table;
+    height: 100vh;
+    width: 100%;
+}
+#cent_d {
+    display: table-cell;
+    vertical-align: middle;
 }
 .welcome_top {
-    display: inline-block;
-    vertical-align: top;
-    margin: 7% 2% 3% 2%;
+    margin: 5.5% 2% 3% 2%;
 }
 #welcome_logo {
     height: 7em;

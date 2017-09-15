@@ -13,7 +13,7 @@ html, body {
     min-width: 1200px;
 }
 #content {
-    padding-bottom: 10em;
+    padding-bottom: 7em;
 }
 a {
     text-decoration: none;
@@ -246,16 +246,79 @@ button:focus{
     position: absolute;
     bottom: 0;
     left: 0;
-    color: #fff;
-    padding: 1em 5%;
-    background-color: #ccc;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: #222;
+    border-top: 2px solid #b71c1c;
+    color: #bbb;
+    padding: 2em 5%;
+    text-align: left;
     -webkit-box-shadow: 0px -3px 5px -3px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px -3px 5px -3px rgba(0,0,0,0.75);
     box-shadow: 0px -3px 5px -3px rgba(0,0,0,0.75);
 }
-
-/*Spinner from http://tobiasahlin.com/spinkit/*/
+#foot_ft_img {
+    height: 3em;
+    margin: -1.3em 0em -1.7em 0em;
+    padding: 0.5em 2em;
+    border-right: 2px solid #444;
+    display: inline-block;
+}
+#footer a {
+    color: #ddd;
+    text-decoration: underline;
+    display: inline-block;
+    margin: 0em 0.5em;
+    margin-bottom: 1em;
+}
+#footer a:hover {
+    color: #fff;
+}
+#footer p2 {
+    margin-left: 0.5em;
+    font-size: 1.1em;
+}
+.f_text {
+    display: inline-block;
+    vertical-align: middle;
+    text-shadow: none;
+    font-size: 0.9em;
+}
+#foot_ft_fnt a {
+    font-family: 'Prosto One', cursive;
+    color: #ddd;
+    text-decoration: none;
+    margin: 0.3em 0em 0em 0.5em;
+}
+#foot_soc_net_links {
+    display: inline-block;
+    margin-left: 1em;
+}
+#foot_soc_net_links a {
+    margin: 0;
+    margin-left: 1em;
+    text-decoration: none;
+    opacity: 0.8;
+}
+#foot_soc_net_links a:hover {
+    opacity: 1;
+}
+.foot_soc_img {
+    height: 1.2em;
+    margin-top: -1em;
+    margin-bottom: -0.2em;
+    margin-right: 0.2em;
+}
+.foot_arrow_up {
+    height: 1.8em;
+    width: 2.5em;
+    margin-right: 2em;
+    float: right;
+    cursor: pointer;
+    opacity: 0.8;
+}
+.foot_arrow_up:hover {
+    opacity: 1;
+}
+/* Spinner from http://tobiasahlin.com/spinkit/ */
 #spinner_wrapper {
     position: fixed;
     top: 0;
