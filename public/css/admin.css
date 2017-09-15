@@ -1,0 +1,47 @@
+html, body {
+    text-align: center;
+    font-family: 'Work Sans', sans-serif;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.75);
+}
+input, textarea {
+    width: 50em;
+    margin: 0.5em;
+    padding: 0.3em;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 0.9em;
+}
+#login_form {
+    padding: 2em 5em;
+    background-color: #aaa;
+}
+#login_form input {
+    width: 20em;
+}
+#login_btn, 
+#add_project_btn, 
+.update_project_btn,
+.delete_project_btn {
+    border: 1px solid #bbb;
+    padding: 0.5em;
+    background-color: #ccc;
+    cursor: pointer;
+}
+#login_btn:hover, 
+#add_project_btn:hover, 
+.update_project_btn:hover,
+.delete_project_btn:hover {
+    background-color: #ddd;
+}
+#logged_in_div {
+    background-color: #aaa;
+    color: #fff;
+    padding: 2em;
+    margin-bottom: 2em;
+}
+#logged_in_div a {
+    color: #fff;
+}
+#hr_log_form, #hr_form_proj, .pr_sep {
+    margin: 2em;
+    border-color: #eee;
+}

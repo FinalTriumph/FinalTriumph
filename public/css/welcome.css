@@ -1,0 +1,71 @@
+html, body {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-image: url('/images/wb_back.jpg');
+    background-size: 100% 100%;
+    font-family: 'Work Sans', sans-serif;
+    text-shadow: 1px 1px 1px rgba(200,200,200,0.75);
+}
+a {
+    color: #444;
+}
+#content {
+    background-image: url('/images/w_back.png');
+    background-size: 100% 100%;
+    background-color: #eee;
+    background-color: rgba(240, 240, 240, 0.8);
+    min-height: 100vh;
+    color: #444;
+}
+.welcome_top {
+    display: inline-block;
+    vertical-align: top;
+    margin: 7% 2% 3% 2%;
+}
+#welcome_logo {
+    height: 7em;
+    margin-bottom: 2em;
+}
+h2 {
+    font-family: 'Prosto One', cursive;
+    font-size: 2.3em;
+    margin: 0;
+}
+p1 {
+    color: #777;
+}
+p2 {
+    display: inline-block;
+    vertical-align: bottom;
+    font-size: 1.2em;
+    margin-left: 0.3em;
+    margin-bottom: -0.15em;
+}
+.welcome_hr {
+    width: 80%;
+    margin: 0 auto;
+    border: 0; 
+    height: 1px; 
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(20, 20, 20, 0.5), rgba(0, 0, 0, 0));
+}
+.bottom_inline {
+    display: inline-block;
+    vertical-align: top;
+    margin: 2% 0;
+    padding: 1em 3em;
+    padding-bottom: 2em;
+    margin-bottom: 2em;
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
+    text-transform: uppercase;
+    width: 10em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.welcome_img {
+    width: 100%;
+    margin-top: 1em;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
