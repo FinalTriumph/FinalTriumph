@@ -1,6 +1,6 @@
 <?php
 
-$title = "About";
+$title = "Contact";
 
 require_once('./views/inc/header.php')
 

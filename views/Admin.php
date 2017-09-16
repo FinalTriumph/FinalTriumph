@@ -2,10 +2,11 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Admin</title>
+    <title>Admin | Kaspars Andžāns "FinalTriumph"</title>
     <!--<link rel="icon" href="https://i.imgur.com/KFGajXy.png" />-->
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700&amp;subset=latin-ext" rel="stylesheet" />
     <link href="/public/css/admin.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 </head>
 
 <body>
@@ -25,22 +26,27 @@ if (isset($_SESSION["admin"])) {
         
         ?>
         
-        <div id="logged_in_div">
-            <p1>Logged in as <?php echo $_SESSION["admin"]; ?> | </p1>
-            <a href="ka-ft-admin-logout"> Logout</a>
-            <hr id="hr_log_form"/>
-            <form action="ka-ft-admin-add-project" method="POST" id="add_project">
-                <input type="text" name="title" placeholder="Title ..." required /><br />
-                <input type="text" name="languages" placeholder="Languages ..." required /><br />
-                <input type="text" name="image" placeholder="Image link ..." required /><br />
-                <input type="text" name="link" placeholder="Project link ..." required /><br />
-                <input type="text" name="category" placeholder="Category ..." required /><br />
-                <textarea name="description" placeholder="Description ..." rows="5" required /></textarea><br />
-                <input type="hidden" name="nocsrf" value="<?php echo $_SESSION['token']; ?>">
-                <input type="submit" value="Add Project" id="add_project_btn" />
-            </form>
-            <hr id="hr_form_proj"/>
-        </div>
+        <button id="show_projects">Projects</button>
+        <button id="show_events">Events</button>
+        
+        <div id="toggle_projects">
+            <div class="logged_in_div">
+                <h2>Projects</h2>
+                <p1>Logged in as <?php echo $_SESSION["admin"]; ?> | </p1>
+                <a href="ka-ft-admin-logout"> Logout</a>
+                <hr class="hr_log_form"/>
+                <form action="ka-ft-admin-add-project" method="POST" id="add_project">
+                    <input type="text" name="title" placeholder="Title ..." required /><br />
+                    <input type="text" name="languages" placeholder="Languages ..." required /><br />
+                    <input type="text" name="image" placeholder="Image link ..." required /><br />
+                    <input type="text" name="link" placeholder="Project link ..." required /><br />
+                    <input type="text" name="category" placeholder="Category ..." required /><br />
+                    <textarea name="description" placeholder="Description ..." rows="5" required /></textarea><br />
+                    <input type="hidden" name="nocsrf" value="<?php echo $_SESSION['token']; ?>">
+                    <input type="submit" value="Add Project" id="add_project_btn" />
+                </form>
+                <hr id="hr_form_proj"/>
+            </div>
         
         <?php
         
@@ -63,9 +69,51 @@ if (isset($_SESSION["admin"])) {
                 <input type="hidden" name="nocsrf" value="'.$_SESSION['token'].'" />
                 <input type="submit" onclick="return confirm(\'Delete this project?\')" value="Delete Project" class="delete_project_btn" />
             </form>
-            <hr class="pr_sep" />
-            ';
+            <hr class="pr_sep" />';
         }
+        ?>
+        </div>
+        
+        <div id="toggle_events">
+            <div class="logged_in_div">
+            <h2>Events</h2>
+            <p1>Logged in as <?php echo $_SESSION["admin"]; ?> | </p1>
+            <a href="ka-ft-admin-logout"> Logout</a>
+                <hr class="hr_log_form"/>
+                <form action="ka-ft-admin-add-event" method="POST" id="add_event">
+                    <input type="text" name="time" placeholder="Time ..." required /><br />
+                    <input type="text" name="title" placeholder="Title ..." required /><br />
+                    <textarea name="description" placeholder="Description ..." rows="5" required /></textarea><br />
+                    <input type="hidden" name="nocsrf" value="<?php echo $_SESSION['token']; ?>">
+                    <input type="submit" value="Add Event" id="add_event_btn" />
+                </form>
+                <hr id="hr_form_event"/>
+            </div>
+        
+        
+        <?php
+        
+        $events = Database::query('SELECT * FROM events ORDER BY id DESC');
+        
+        foreach ($events as $event) {
+            echo '
+            <form action="ka-ft-admin-update-event?id='.$event['id'].'" method="POST">
+                <input type="text" name="time" placeholder="Time ..." value="'.$event['time'].'" required /><br />
+                <input type="text" name="title" placeholder="Title ..." value="'.$event['title'].'" required /><br />
+                <textarea name="description" placeholder="Description ..." rows="5" required />'.$event['description'].'</textarea><br />
+                <input type="hidden" name="nocsrf" value="'.$_SESSION['token'].'">
+                <input type="submit" value="Update Event" class="update_project_btn" />
+            </form>
+            <form action="ka-ft-admin-delete-event" method="POST">
+                <input type="hidden" name="eventid" value="'.$event['id'].'" />
+                <input type="hidden" name="nocsrf" value="'.$_SESSION['token'].'" />
+                <input type="submit" onclick="return confirm(\'Delete this event?\')" value="Delete Event" class="delete_project_btn" />
+            </form>
+            <hr class="pr_sep" />';
+        }
+        
+        echo '</div>';
+    
     } else {
         
         session_unset();

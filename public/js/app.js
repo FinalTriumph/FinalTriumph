@@ -9,3 +9,9 @@ $(window).scroll(function(event){
     }
     lastScrollTop = cst;
 });
+
+$(".foot_arrow_up").click(function() {
+    $('html, body').animate({
+        scrollTop: $('body').offset().top
+    }, 1000);
+});

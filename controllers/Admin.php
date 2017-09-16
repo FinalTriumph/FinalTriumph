@@ -38,7 +38,7 @@ class Admin extends Controller {
         header("Location: /ka-ft-admin");
     }
     
-    public static function addProject() {
+    public static function checkAdminCSRF() {
         
         session_start();
         
@@ -57,6 +57,12 @@ class Admin extends Controller {
         if ($_POST['nocsrf'] !== $_SESSION['token']) {
             die("Invalid token");
         }
+    
+    }
+    
+    public static function addProject() {
+        
+        self::checkAdminCSRF();
         
         if (!empty($_POST['title']) && !empty($_POST['languages']) && !empty($_POST['image']) && !empty($_POST['link']) && !empty($_POST['description']) && !empty($_POST['category']) ) {
                 
@@ -68,23 +74,7 @@ class Admin extends Controller {
     
     public static function updateProject() {
         
-        session_start();
-        
-        if (isset($_SESSION["admin"])) {
-            if (!Database::query('SELECT * FROM admin WHERE username=:username', array(':username'=>$_SESSION["admin"]))) {
-                die("Unauthorized page");
-            }
-        } else {
-            die("Unauthorized Page");
-        }
-        
-        if (!isset($_POST['nocsrf'])) {
-            die("Invalid token");
-        }
-        
-        if ($_POST['nocsrf'] !== $_SESSION['token']) {
-            die("Invalid token");
-        }
+        self::checkAdminCSRF();
         
         if (!isset($_GET['id'])) {
             die("Project id not specified");
@@ -100,29 +90,54 @@ class Admin extends Controller {
     
     public static function deleteProject() {
         
-        session_start();
-        
-        if (isset($_SESSION["admin"])) {
-            if (!Database::query('SELECT * FROM admin WHERE username=:username', array(':username'=>$_SESSION["admin"]))) {
-                die("Unauthorized page");
-            }
-        } else {
-            die("Unauthorized Page");
-        }
-        
-        if (!isset($_POST['nocsrf'])) {
-            die("Invalid token");
-        }
-        
-        if ($_POST['nocsrf'] !== $_SESSION['token']) {
-            die("Invalid token");
-        }
+        self::checkAdminCSRF();
         
         if (!isset($_POST['projectid'])) {
             die("Project id not specified");
         }
         
         Database::query('DELETE FROM projects WHERE id=:id', array(':id'=>$_POST['projectid']));
+        
+        header("Location: /ka-ft-admin");
+    }
+    
+    public static function addEvent() {
+        
+        self::checkAdminCSRF();
+        
+        if ( !empty($_POST['time']) && !empty($_POST['title']) && !empty($_POST['description']) ) {
+                
+            Database::query('INSERT INTO events VALUES (\'\', :time, :title, :description)', array(':time'=>$_POST['time'], ':title'=>$_POST['title'], ':description'=>$_POST['description']));
+        }
+        
+        header("Location: /ka-ft-admin");
+    }
+    
+    public static function updateEvent() {
+        
+        self::checkAdminCSRF();
+        
+        if (!isset($_GET['id'])) {
+            die("Event id not specified");
+        }
+        
+        if ( !empty($_POST['time']) && !empty($_POST['title']) && !empty($_POST['description']) ) {
+                
+            Database::query('UPDATE events SET time=:time, title=:title, description=:description WHERE id=:id', array(':id'=>$_GET['id'], ':time'=>$_POST['time'], ':title'=>$_POST['title'], ':description'=>$_POST['description']));
+        }
+        
+        header("Location: /ka-ft-admin");
+    }
+    
+    public static function deleteEvent() {
+        
+        self::checkAdminCSRF();
+        
+        if (!isset($_POST['eventid'])) {
+            die("Event id not specified");
+        }
+        
+        Database::query('DELETE FROM events WHERE id=:id', array(':id'=>$_POST['eventid']));
         
         header("Location: /ka-ft-admin");
     }

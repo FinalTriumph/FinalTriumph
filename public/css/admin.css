@@ -18,7 +18,8 @@ input, textarea {
     width: 20em;
 }
 #login_btn, 
-#add_project_btn, 
+#add_project_btn,
+#add_event_btn,
 .update_project_btn,
 .delete_project_btn {
     border: 1px solid #bbb;
@@ -29,19 +30,48 @@ input, textarea {
 #login_btn:hover, 
 #add_project_btn:hover, 
 .update_project_btn:hover,
-.delete_project_btn:hover {
+.delete_project_btn:hover,
+#add_event_btn:hover,
+#show_projects:hover, 
+#show_events:hover {
     background-color: #ddd;
 }
-#logged_in_div {
+.logged_in_div {
     background-color: #aaa;
     color: #fff;
     padding: 2em;
     margin-bottom: 2em;
 }
-#logged_in_div a {
+.logged_in_div a {
     color: #fff;
 }
-#hr_log_form, #hr_form_proj, .pr_sep {
+.logged_in_div h2 {
+    text-transform: uppercase;
+    margin-top: 0;
+}
+.hr_log_form, 
+#hr_form_proj, 
+#hr_form_event, 
+.pr_sep {
     margin: 2em;
     border-color: #eee;
+}
+#toggle_events {
+    display: none;
+    border-top: 10px solid #eee;
+}
+#toggle_projects {
+    border-top: 10px solid #444;
+}
+#show_projects, 
+#show_events {
+    width: 20em;
+    margin: 0.5em;
+    margin-bottom: 1em;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 0.9em;
+    border: 1px solid #bbb;
+    padding: 0.5em;
+    background-color: #ccc;
+    cursor: pointer;
 }

@@ -40,8 +40,28 @@ Route::set('ka-ft-admin-delete-project', function() {
     Admin::deleteProject();
 });
 
+//
+
+Route::set('ka-ft-admin-add-event', function() {
+    Admin::addEvent();
+});
+
+Route::set('ka-ft-admin-update-event', function() {
+    Admin::updateEvent();
+});
+
+Route::set('ka-ft-admin-delete-event', function() {
+    Admin::deleteEvent();
+});
+
+//
+
 Route::set('get-all-projects-api', function() {
     Portfolio::getProjects();
+});
+
+Route::set('get-all-events-api', function() {
+    About::getEvents();
 });
 
 

@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title><?php echo $title; ?></title>
+    <title><?php echo $title; ?> | Kaspars Andžāns "FinalTriumph"</title>
     <link rel="icon" href="/images/logo_500x500.png" />
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700&amp;subset=latin-ext" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Prosto+One&amp;subset=latin-ext" rel="stylesheet" />

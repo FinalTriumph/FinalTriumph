@@ -8,21 +8,21 @@ var firstTimeout;
 
 function startSlideShow() {
     showDivs(slideIndex += 1);
-    slideShow = setTimeout(startSlideShow, 3000);
+    slideShow = setTimeout(startSlideShow, 5000);
 }
 
 function plusDivs(n) {
     clearTimeout(firstTimeout);
     clearTimeout(slideShow);
     showDivs(slideIndex += n);
-    slideShow = setTimeout(startSlideShow, 3000);
+    slideShow = setTimeout(startSlideShow, 5000);
 }
 
 function currentDiv(n) {
     clearTimeout(firstTimeout);
     clearTimeout(slideShow);
     showDivs(slideIndex = n);
-    slideShow = setTimeout(startSlideShow, 3000);
+    slideShow = setTimeout(startSlideShow, 5000);
 }
 
 function showDivs(n) {
@@ -73,7 +73,7 @@ $(document).ready(function() {
 });
 
 $(document).imagesLoaded( function() {
-    firstTimeout = setTimeout(startSlideShow, 3000);
+    firstTimeout = setTimeout(startSlideShow, 5000);
     $("#slider_div").css("opacity", '1');
     $("#all_projects_div").css('opacity', '1');
     $('#spinner_wrapper, .spinner').hide();

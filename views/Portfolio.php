@@ -35,25 +35,25 @@ require_once('./views/inc/header.php');
 <div id="all_projects_div">
     <h2 class="pr_h_h2 pr_h_h2_first">Newest projects 
         <hr class="pr_h_hr" />
-        <span class="pr_h_desc">Created with main focus on PHP, MySQL Laravel.</span>
+        <span class="pr_h_desc">Created with main focus on PHP / MySQL / Laravel.</span>
     </h2>
     <div id="new_projects"></div>
     
     <h2 class="pr_h_h2">Front End Projects for Free Code Camp 
         <hr class="pr_h_hr" />
-        <span class="pr_h_desc">Created with main focus on HTML, CSS, JavaScript, jQuery.</span>
+        <span class="pr_h_desc">Created with main focus on HTML / CSS / JavaScript / jQuery.</span>
     </h2>
     <div id="fccfe_projects"></div>
     
     <h2 class="pr_h_h2">Data Visualization Projects for Free Code Camp 
         <hr class="pr_h_hr" />
-        <span class="pr_h_desc">Created with main focus on D3.js, React.js.</span>
+        <span class="pr_h_desc">Created with main focus on D3.js / React.js.</span>
     </h2>
     <div id="fccdv_projects"></div>
     
     <h2 class="pr_h_h2">Back End Projects for Free Code Camp 
         <hr class="pr_h_hr" />
-        <span class="pr_h_desc">Created with main focus on Node.js, Express, MongoDB, Mongoose.</span>
+        <span class="pr_h_desc">Created with main focus on Node.js / Express / MongoDB / Mongoose.</span>
     </h2>
     <div id="fccbe_projects"></div>
 </div>
