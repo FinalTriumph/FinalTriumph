@@ -69,12 +69,13 @@ $(document).ready(function() {
             }
             $(".project_div").flip({ trigger: "hover", 	reverse: true, });
         }
+        
+        $(document).imagesLoaded( function() {
+            firstTimeout = setTimeout(startSlideShow, 5000);
+            $("#slider_div").css("opacity", '1');
+            $("#all_projects_div").css('opacity', '1');
+            $('#spinner_wrapper, .spinner').hide();
+        });
     });
 });
 
-$(document).imagesLoaded( function() {
-    firstTimeout = setTimeout(startSlideShow, 5000);
-    $("#slider_div").css("opacity", '1');
-    $("#all_projects_div").css('opacity', '1');
-    $('#spinner_wrapper, .spinner').hide();
-});
