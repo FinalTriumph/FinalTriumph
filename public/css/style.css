@@ -13,7 +13,7 @@ html, body {
     min-width: 1200px;
 }
 #content {
-    padding-bottom: 7em;
+    padding-bottom: 10em;
 }
 a {
     text-decoration: none;
@@ -71,7 +71,7 @@ button:focus{
     background-color: rgba(0, 0, 0, 0.6);
     background-image: url(/images/darker_bg.jpg);
     background-size: 100% 100%;
-    padding: 6em 10% 2em 10%;
+    padding: 7em 10% 3em 10%;
     color: #fff;
     text-align: left;
     text-shadow: 1px 1px 1px rgba(0,0,0,0.75);
@@ -93,7 +93,8 @@ button:focus{
     display: block;
     margin: 0em 0em 1em 0.5em;
 }
-#about_top_intro p {
+#about_top_intro p, 
+#about_top p {
     text-indent: 0.5em;
 }
 #about_ps {
@@ -106,8 +107,8 @@ button:focus{
     padding: 3em 4em 2em 6em;
     text-align: left;
     text-shadow: 1px 1px 1px rgba(0,0,0,0.75);
-    margin: 0;
-    margin-bottom: 3em;
+    margin: 0em;
+    margin-bottom: 0.5em;
     border-bottom: 1px solid #999;
     border-top: 1px solid #999;
     -webkit-box-shadow: 0px 2px 5px -2px rgba(0,0,0,0.75);
@@ -120,23 +121,51 @@ button:focus{
     border-top: 1px solid #b71c1c;
     border-top-color: rgba(183, 28, 28, 0.8);
 }
-#sw_d_btn {
+#sw_d_btn, 
+#exp_all_btn,
+#cl_all_btn {
     font-size: 0.7em;
-    margin-left: 3em;
+    margin-left: 2em;
     font-weight: bold;
     cursor: pointer;
     text-transform: uppercase;
     color: #bbb;
 }
-#sw_d_btn:hover {
+#exp_all_btn,
+#cl_all_btn {
+    margin-left: 7em;
+    transition: opacity 0.2s
+}
+.cl_exp_btn_inact {
+    opacity: 0.1;
+    pointer-events: none;
+}
+#sw_d_btn:hover, 
+#exp_all_btn:hover,
+#cl_all_btn:hover {
     color: #ddd;
 }
 #sw_d_sp {
     display: inline-block;
     vertical-align: middle;
     margin-top: -0.3em;
-    margin-left: 0.3em;
+    margin-left: 0.4em;
     font-size: 1.4em;
+}
+#exp_all_sp,
+#cl_all_sp {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -0.2em;
+    margin-left: 0.6em;
+    font-size: 1.4em;
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+    transform: rotate(90deg);
+    text-shadow: 1px -1px 1px rgba(0,0,0,0.75);
+}
+#cl_all_sp {
+    margin-top: -0.1em;
 }
 #events_div, #events_div_opp {
     text-align: left;
@@ -145,7 +174,30 @@ button:focus{
     display: none;
 }
 .event_cont {
-    padding: 3em 5em;
+    padding: 0em 5em;
+    //background-color: #eee;
+    //border: 1px solid #fff;
+    text-shadow: 1px 1px 1px rgba(240,240,240,0.75);
+}
+.event_h3 {
+    margin: 0;
+    margin-top: 2.5em;
+    padding-left: 3em;
+    cursor: pointer;
+}
+.event_h_sep {
+    margin: auto 0.5em;
+    color: #999;
+    font-weight: normal;
+}
+.event_h_hr {
+    margin: 1.5em auto 0.5em auto;
+    //border: 1px solid #999;
+    //border-top: 1px solid #b71c1c;
+    //border-top-color: rgba(183, 28, 28, 0.8);
+}
+.event_desc {
+    display: none;
 }
 
 /* Slider */
@@ -246,26 +298,22 @@ button:focus{
     opacity: 0;
     transition: opacity 0.3s;
 }
-.pr_h_h2 {
+.pr_h_h3 {
     background-color: #333;
     background-color: rgba(0, 0, 0, 0.8);
     color: #eee;
-    padding: 2.5em 4em 2.2em 6em;
+    padding: 3em 4em 2em 6em;
     text-align: left;
     text-shadow: 1px 1px 1px rgba(0,0,0,0.75);
     margin: 0;
-    margin-bottom: 3em;
     border-bottom: 1px solid #999;
     border-top: 1px solid #999;
     -webkit-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
 }
-.pr_h_h2_first {
-    margin-top: 0em;
-}
 .pr_h_desc {
-    font-size: 0.7em;
+    font-size: 0.8em;
     font-weight: normal;
 }
 .pr_h_hr {
@@ -279,6 +327,7 @@ button:focus{
 #fccdv_projects,
 #fccbe_projects {
     padding-bottom: 4.5em;
+    padding-top: 3em;
 }
 .project_div {
     display: inline-block;
@@ -287,13 +336,17 @@ button:focus{
     margin: 0 1% 2em 1%;
     position: relative;
 }
+.cert_div {
+    width: 24%;
+    margin: 0 4% 2em 4%;
+}
 .project_img {
     width: 100%;
     display: inline-block;
     vertical-align: bottom;
-    -webkit-box-shadow: 0px 2px 5px -3px rgba(0,0,0,1);
-    -moz-box-shadow: 0px 2px 5px -3px rgba(0,0,0,1);
-    box-shadow: 0px 2px 5px -3px rgba(0,0,0,1);
+    -webkit-box-shadow: 0px 2px 7px -2px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 2px 7px -2px rgba(0,0,0,1);
+    box-shadow: 0px 2px 7px -2px rgba(0,0,0,1);
 }
 .project_img_back {
     position: absolute;
@@ -304,7 +357,11 @@ button:focus{
     padding: 0;
     text-shadow: 1px 1px 1px rgba(0,0,0,0.75);
     background-color: #333;
-    background-color: rgba(30, 30, 30, 0.95);
+    background-color: rgba(50, 50, 50, 0.9);
+    //background: -webkit-linear-gradient(-45deg, rgba(30, 30, 30, 0.95), rgba(50, 50, 50, 0.95)); /* For Safari 5.1 to 6.0 */
+    //background: -o-linear-gradient(-45deg, rgba(30, 30, 30, 0.95), rgba(50, 50, 50, 0.95)); /* For Opera 11.1 to 12.0 */
+    //background: -moz-linear-gradient(-45deg, rgba(30, 30, 30, 0.95), rgba(50, 50, 50, 0.95)); /* For Firefox 3.6 to 15 */
+    //background: linear-gradient(-45deg, rgba(30, 30, 30, 0.95), rgba(50, 50, 50, 0.95));
     color: #fff;
 }
 .project_img_back h3 {
@@ -317,13 +374,16 @@ button:focus{
     border: 2px solid #999;
     padding: 0.5em;
     color: #eee;
-    -webkit-box-shadow: 0px 3px 5px -5px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 3px 5px -5px rgba(0,0,0,0.75);
-    box-shadow: 0px 3px 5px -5px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 2px 7px -2px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 2px 7px -2px rgba(0,0,0,1);
+    box-shadow: 0px 2px 7px -2px rgba(0,0,0,1);
 }
 .back_link:hover {
     color: #fff;
     border-color: #eee;
+}
+.cert_back_link {
+    margin: 30% auto;
 }
 
 /* Footer */
