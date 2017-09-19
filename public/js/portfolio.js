@@ -50,7 +50,7 @@ $(document).ready(function() {
     
     $.getJSON(window.location.origin + '/get-all-projects-api', function(data) {
         for (var i = 0; i < data.length; i++) {
-            var project = '<div class="project_div"><div class="front"><img src="'+data[i]['image']+'" class="project_img" /></div> <div class="back"><img src="'+data[i]['image']+'" class="project_img" /><div class="project_img_back"><h3>'+data[i]['title']+'</h3><a href="#" class="back_link">Description</a><a href="'+data[i]['link']+'" class="back_link" target="_blank">View Project</a></div></div></div>';
+            var project = '<div class="project_div"><div class="front"><img src="'+data[i]['image']+'" class="project_img" /></div> <div class="back"><img src="'+data[i]['image']+'" class="project_img" /><div class="project_img_back"><h3>'+data[i]['title']+'</h3><a href="/project?id='+data[i]['id']+'" class="back_link">Project Description</a><a href="'+data[i]['link']+'" class="back_link" target="_blank">View Project</a></div></div></div>';
             switch (data[i]['category']) {
                 case 'new': 
                     $('#new_projects').append(project);

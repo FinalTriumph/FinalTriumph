@@ -33,7 +33,7 @@ require_once('./views/inc/header.php');
 </div>
 
 <div id="all_projects_div">
-    <h3 class="pr_h_h3">Newest projects 
+    <h3 class="pr_h_h3">Newest Projects 
         <hr class="pr_h_hr" />
         <span class="pr_h_desc">Created with main focus on PHP / MySQL / Laravel.</span>
     </h3>

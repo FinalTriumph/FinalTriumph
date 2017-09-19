@@ -12,9 +12,15 @@ Route::set('portfolio', function() {
     Controller::CreateView('Portfolio');
 });
 
+Route::set('project', function() {
+    Project::singleProject();
+});
+
 Route::set('contact', function() {
     Controller::CreateView('Contact');
 });
+
+//Admin
 
 Route::set('ka-ft-admin', function() {
     Controller::CreateView('Admin');
@@ -28,6 +34,8 @@ Route::set('ka-ft-admin-logout', function() {
     Admin::logout();
 });
 
+//Admin - projects
+
 Route::set('ka-ft-admin-add-project', function() {
     Admin::addProject();
 });
@@ -40,7 +48,7 @@ Route::set('ka-ft-admin-delete-project', function() {
     Admin::deleteProject();
 });
 
-//
+//Admin - events
 
 Route::set('ka-ft-admin-add-event', function() {
     Admin::addEvent();
@@ -54,10 +62,14 @@ Route::set('ka-ft-admin-delete-event', function() {
     Admin::deleteEvent();
 });
 
-//
+//API
 
 Route::set('get-all-projects-api', function() {
     Portfolio::getProjects();
+});
+
+Route::set('get-single-project-api', function() {
+    Project::getSingleProject();
 });
 
 Route::set('get-all-events-api', function() {

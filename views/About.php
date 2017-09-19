@@ -19,7 +19,7 @@ require_once('./views/inc/header.php')
             <p>At some point, when everything else had not gone as expected, I realized that, given my skill set, web development is the only option left that makes sense for me to focus on. And since I joined Free Code Camp, on October 10, 2016, and started to learn coding, I am absolutely sure, that this is exactly what I was looking for. This is my "Final Triumph".</p>
             <p>Now I'm still learning, having fun with some practice projects and looking for opportunities, where I could put my already learned skills to work and to keep learning.</p>
         </div>
-        <p>And besides everything else, for almost 10 years I have deep interest about how universe works, what exactly is universe, what is consciousness, how human brain works, how human body functions, why are we here, what are we, where exactly is here and these kind of topics from scientific, religious, philosophical, intuitive and pure common sense point of view.</p>
+        <p>And besides everything else, for almost 10 years I have deep interest about how the universe works, what exactly is universe, how human brain works, how human body functions, what is consciousness, why are we here, where exactly is here, what it's all about and other topics of this kind from scientific, religious, philosophical, intuitive and pure common sense point of view.</p>
     </div>
     
     <h3 class="switch_dir_h3">Timeline with brief descriptions of what I have been doing from 2010. 
