@@ -76,6 +76,11 @@ Route::set('get-all-events-api', function() {
     About::getEvents();
 });
 
+//Email
+Route::set('send-message', function() {
+    Contact::sendMessage();
+});
+
 
 
 ?>

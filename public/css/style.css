@@ -196,13 +196,19 @@ button:focus{
 .event_h3 {
     cursor: pointer;
     background-color: #fafafa;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.4);
+    color: #444;
     padding: 2em 5em 1.5em 5em;
     margin: 0;
     border-bottom: 1px solid #ddd;
     -webkit-box-shadow: 0px 0px 6px -5px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 6px -5px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 6px -5px rgba(0,0,0,0.75);
+}
+.event_h3:hover {
+    color: #333;
+    background-color: #fdfdfd;
+    background-color: rgba(255, 255, 255, 0.6);
 }
 .event_h_sep {
     margin: auto 1em;
@@ -532,6 +538,7 @@ button:focus{
 }
 #send_message_form textarea {
     resize: vertical;
+    margin-bottom: 0.5em;
 }
 #send_message_form input[type=submit] {
     background-color: #444;
@@ -545,12 +552,21 @@ button:focus{
     box-shadow: none;
 }
 #send_message_form input[type=submit]:hover {
-    background-color: #333;
+    background-color: #3b3b3b;
+    background-color: rgba(50, 50, 50, 0.8);
     color: #fff;
-    -webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.75);
-    box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 1px 2px 0px rgba(40, 40, 40, 0.75);
+    -moz-box-shadow: 0px 1px 2px 0px rgba(40, 40, 40, 0.75);
+    box-shadow: 0px 1px 2px 0px rgba(40, 40, 40, 0.75);
     
+}
+#sending_m_btn {
+    color: #eee;
+    border: none;
+    padding: 0.6em;
+    font-size: 0.9em;
+    margin: 1em auto 0em 0.5em;
+    display: none;
 }
 #contact_soc_med {
     padding: 5em 0em 8em 0em;
@@ -568,6 +584,43 @@ button:focus{
     height: 2em;
     margin-right: 0.7em;
     margin-bottom: -0.7em;
+}
+/* Contact Popup */
+
+#popup {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    display: none;
+}
+#popup_message {
+    background-color: #eee;
+    width: 25em;
+    margin: auto;
+    padding: 2.5em;
+    font-size: 1.1em;
+    -webkit-box-shadow: 0px 2px 5px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 2px 5px -2px rgba(0,0,0,0.75);
+    box-shadow: 0px 2px 5px -2px rgba(0,0,0,0.75);
+}
+#popup_ok {
+    border: none;
+    background-color: #444;
+    color: #eee;
+    margin-top: 1.5em;
+    padding: 0.5em 4em;
+    cursor: pointer;
+    font-family: 'Work Sans', sans-serif;
+} 
+#popup_ok:hover {
+    background-color: #555;
 }
 
 /* Footer */
