@@ -9,7 +9,6 @@ $('#send_message_form').submit(function(e) {
     
     var messageString = "nocsrf=" + $('input[name=nocsrf]').val() + "&name="+ $('input[name=name]').val() + "&email=" + $('input[name=email]').val() + "&subject=" + $('input[name=subject]').val() + "&message=" + $('textarea[name=message]').val();
     
-    console.log('sending');
     $.ajax({
         type: "POST",
         url: '/send-message',

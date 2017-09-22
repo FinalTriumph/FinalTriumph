@@ -18,6 +18,9 @@ html, body {
 a {
     text-decoration: none;
 }
+a:focus {
+    outline: none;
+}
 button:focus{
     outline: none;
 }
@@ -95,11 +98,18 @@ button:focus{
 }
 #about_top_intro p1 {
     display: block;
-    margin: 0em 0em 1em 0.5em;
+    margin: 0em 0em 1em 1em;
 }
 #about_top_intro p, 
 #about_top p {
-    text-indent: 0.5em;
+    text-indent: 1em;
+}
+#about_top_intro a {
+    color: #fff;
+    font-style: italic;
+}
+#about_top_intro a:hover {
+    text-decoration: underline;
 }
 #about_ps {
     font-size: 0.9em;
@@ -217,8 +227,15 @@ button:focus{
 }
 .event_desc {
     display: none;
-    padding: 1em 5em 1.5em 5em;
-    text-indent: 0.5em;
+    padding: 1.5em 5em 2em 5em;
+    text-indent: 1em;
+}
+.event_desc a {
+    color: #444;
+    text-decoration: underline;
+}
+.event_desc a:hover {
+    color: #777;
 }
 #ab_bottom_cont_div {
     background-color: #333;
@@ -234,6 +251,23 @@ button:focus{
     -moz-box-shadow: 0px 0px 3px -2px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 3px -2px rgba(0,0,0,0.75);
 }
+.indent {
+    padding-right: 1em;
+}
+
+.about_cert_img {
+    display: inline-block;
+    vertical-align: top;
+    width: 25%;
+    margin: 2em 4%;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.about_cert_img:hover {
+    -webkit-box-shadow: 0px 3px 7px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 3px 7px -2px rgba(0,0,0,0.75);
+    box-shadow: 0px 3px 7px -2px rgba(0,0,0,0.75);
+}
 
 /* Slider */
 #slider_div {
@@ -243,8 +277,8 @@ button:focus{
     background-color: rgba(0, 0, 0, 0.6);
     background-image: url(/images/darker_bg.jpg);
     background-size: 100% 100%;
-    padding-top: 2.5em;
-    padding-bottom: 1em;
+    padding-top: 3.5em;
+    padding-bottom: 2em;
     opacity: 0;
     transition: opacity 0.3s;
 }
@@ -252,12 +286,14 @@ button:focus{
     position: absolute;
     width: 100%;
     height: 100%;
-    top: 2.5em;
+    top: 3.5em;
     left: 0;
 }
 .mySlides {
     width: 100%;
     display: none;
+    position: relative;
+    z-index: 100;
 }
 #def_f_slide {
     display: block;
@@ -286,6 +322,8 @@ button:focus{
     -webkit-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.3);
     -moz-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.3);
     box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 151;
 }
 .slide_s_selected {
     background-color: #fff;
@@ -310,6 +348,8 @@ button:focus{
     cursor: pointer;
     transition: all 0.3s ease;
     text-shadow: 0px 0px 2px rgba(0,0,0,0.5);
+    position: relative;
+    z-index: 150;
 }
 .display-left:hover {
     color: #ccc;

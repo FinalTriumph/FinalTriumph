@@ -42,6 +42,7 @@ function showDivs(n) {
     }
     $(slides[slideIndex - 1]).fadeIn(500);
     dots[slideIndex - 1].className += " slide_s_selected";
+
 }
 
 //////////
@@ -77,5 +78,12 @@ $(document).ready(function() {
             $('#spinner_wrapper, .spinner').hide();
         });
     });
+    
+    $(".mySlides").click(function() {
+        $('html, body').animate({
+            scrollTop: $('#all_projects_div').offset().top
+        }, 700);
+    });
+    
 });
 

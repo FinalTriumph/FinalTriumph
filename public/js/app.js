@@ -1,5 +1,6 @@
 /* global $ */
 var lastScrollTop = 0;
+
 $(window).scroll(function(event){
     var cst = $(this).scrollTop();
     if (cst > lastScrollTop){

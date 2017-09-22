@@ -30,15 +30,12 @@
         <div class="welcome_bottom">
             <a href="about"><div class="bottom_inline">
                     <p3>About</p3>
-                    <img src="/images/photo.jpg" class="welcome_img">
             </div></a>
             <a href="portfolio"><div class="bottom_inline">
                     <p3>Portfolio</p3>
-                    <img src="/images/portf.png" class="welcome_img">
             </div></a>
             <a href="contact"><div class="bottom_inline">
                     <p3>Contact</p3>
-                    <img src="/images/portf.png" class="welcome_img">
             </div></a>
         </div>
     </div>
