@@ -15,8 +15,9 @@ class Contact extends Controller {
             $subject = $_POST['subject'];
             $message = $_POST['message'];
             
+            require 'vendor/autoload.php';
+            
             require_once("./classes/MailPass.php");
-            $password = MailPass::password();
             
             require_once('./classes/PHPMailer/PHPMailerAutoload.php');
             
@@ -25,16 +26,18 @@ class Contact extends Controller {
             $mail->isSMTP();
             $mail->SMTPAuth = true;
             $mail->SMTPSecure = 'ssl';
-            $mail->Host = 'smtp.gmail.com';
-            $mail->Port = '465';
+            //Cloud9 $mail->Host = 'smtp.gmail.com';
+            $mail->Host = 'smtp.sendgrid.net';
+            $mail->Port = '587';
             $mail->isHTML();
-            $mail->Username = 'finaltriumph.es@gmail.com';
             /* Cloud9
-            $mail->Password = $password;*/
-            //Heroku
-            $mail->Password = getenv('HTTP_MAIL_PASS');
-            ///////
-            $mail->SetFrom('finaltriumph.es@gmail.com');
+            $mail->Username = 'finaltriumph.es@gmail.com';
+            $password = MailPass::password();
+            $mail->Password = $password;
+            */
+            $mail->Username = getenv('SENDGRID_USERNAME');
+            $mail->Password = getenv('SENDGRID_PASSWORD');
+            $mail->SetFrom('no-reply@finaltriumph.eu');
             $mail->Subject = 'FT Mail';
             $mail->Body = '<p1>Name: <strong>'.$name.'</strong><br />
                             Email: <strong>'.$email.'</strong></p1><br />
