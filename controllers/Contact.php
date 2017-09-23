@@ -17,12 +17,6 @@ class Contact extends Controller {
             
             require 'vendor/autoload.php';
             
-            $message = '<p1>Name: <strong>'.$name.'</strong><br />
-                            Email: <strong>'.$email.'</strong></p1><br />
-                            <p1>Subject: <strong>'.$subject.'</strong></p1>
-                            <hr />
-                            <p1>Message:<br />'.$message.'</p1>';
-            
             $request_body = json_decode('{
                     "personalizations": [{
                             "to": [{
@@ -35,7 +29,7 @@ class Contact extends Controller {
                         },
                         "content": [{
                             "type": "text/html",
-                            "value": "<p1>Name: <strong>Test Name</strong><br />Email: <strong>Test Email</strong></p1><br /><p1>Subject: <strong>Test Subject</strong></p1><hr /><p1>Message:<br />Test Message</p1>"
+                            "value": "<p1>Name: <strong>'.$name.'</strong><br />Email: <strong>'.$email.'</strong></p1><br /><p1>Subject: <strong>'.$subject.'</strong></p1><hr /><p1>Message:<br />'.$message.'</p1>"
                         }]
             }');
                 
