@@ -17,6 +17,12 @@ class Contact extends Controller {
             
             require 'vendor/autoload.php';
             
+            $message = '<p1>Name: <strong>'.$name.'</strong><br />
+                            Email: <strong>'.$email.'</strong></p1><br />
+                            <p1>Subject: <strong>'.$subject.'</strong></p1>
+                            <hr />
+                            <p1>Message:<br />'.$message.'</p1>';
+            
             $request_body = json_decode('{
                     "personalizations": [{
                             "to": [{
@@ -29,7 +35,7 @@ class Contact extends Controller {
                         },
                         "content": [{
                             "type": "text/plain",
-                            "value": "Hello from Heroku"
+                            "value": "'.$message.'"
                         }]
             }');
                 
