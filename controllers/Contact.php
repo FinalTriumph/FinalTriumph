@@ -34,8 +34,12 @@ class Contact extends Controller {
                             "email": "no-reply@finaltriumph.eu"
                         },
                         "content": [{
-                            "type": "text/plain",
-                            "value": "'.$message.'"
+                            "type": "text/html",
+                            "value": "<p1>Name: <strong>Test Name</strong><br />
+                            Email: <strong>Test Email</strong></p1><br />
+                            <p1>Subject: <strong>Test Subject</strong></p1>
+                            <hr />
+                            <p1>Message:<br />Test Message</p1>"
                         }]
             }');
                 
