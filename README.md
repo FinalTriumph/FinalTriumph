@@ -1,3 +1,3 @@
 Personal Website
 
-Running in test mode at https://finaltriumph.herokuapp.com/
+Running in test mode at http://www.finaltriumph.eu/

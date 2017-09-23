@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102887794-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments)};
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-102887794-1');
+    </script>
+
     <meta charset="UTF-8">
     <title><?php echo $title; ?> | Kaspars Andžāns "FinalTriumph"</title>
     <link rel="icon" href="/images/logo_500x500.png" />

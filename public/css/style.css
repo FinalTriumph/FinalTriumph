@@ -435,10 +435,6 @@ button:focus{
     text-shadow: 1px 1px 1px rgba(0,0,0,0.75);
     background-color: #333;
     background-color: rgba(40, 40, 40, 0.9);
-    //background: -webkit-linear-gradient(-45deg, rgba(30, 30, 30, 0.95), rgba(50, 50, 50, 0.95)); /* For Safari 5.1 to 6.0 */
-    //background: -o-linear-gradient(-45deg, rgba(30, 30, 30, 0.95), rgba(50, 50, 50, 0.95)); /* For Opera 11.1 to 12.0 */
-    //background: -moz-linear-gradient(-45deg, rgba(30, 30, 30, 0.95), rgba(50, 50, 50, 0.95)); /* For Firefox 3.6 to 15 */
-    //background: linear-gradient(-45deg, rgba(30, 30, 30, 0.95), rgba(50, 50, 50, 0.95));
     color: #fff;
 }
 .project_img_back h3 {

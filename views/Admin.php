@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Admin | Kaspars Andžāns "FinalTriumph"</title>
-    <!--<link rel="icon" href="https://i.imgur.com/KFGajXy.png" />-->
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700&amp;subset=latin-ext" rel="stylesheet" />
     <link href="/public/css/admin.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
