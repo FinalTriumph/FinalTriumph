@@ -1,6 +1,6 @@
 <?php
 
-$title = "Single Project";
+$title = 'Kaspars Andžāns "FinalTriumph"';
 
 require_once('./views/inc/header.php');
 

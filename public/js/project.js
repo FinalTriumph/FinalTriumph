@@ -5,7 +5,8 @@ $(document).ready(function() {
     var projectId = window.location.href.split('?')[1].substring(3);
     
     $.getJSON(window.location.origin + '/get-single-project-api?id='+projectId, function(data) {
-        console.log(data);
+        
+        document.title = data.project.title + ' | Kaspars Andžāns "FinalTriumph"';
         
         $("#single_project_left").append("<h3>"+data.project.title+"</h3><p class='s_pr_desc'>"+data.project.description+"</p><div id='lang_icons'></div>");
         $("#single_project_right").append("<img src='"+data.project.image+"' class='single_project_img' /><br /><a href='"+data.project.link+"' class='s_pr_link' target='_blank'>View Project</a>");
