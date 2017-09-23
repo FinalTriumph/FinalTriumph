@@ -25,15 +25,11 @@ class Contact extends Controller {
                             "subject": "FT Mail"
                         }],
                         "from": {
-                        "email": "no-reply@finaltriumph.eu"
+                            "email": "no-reply@finaltriumph.eu"
                         },
                         "content": [{
-                            "type": "text/html",
-                            "value": "<p1>Name: <strong>'.$name.'</strong><br />
-                            Email: <strong>'.$email.'</strong></p1><br />
-                            <p1>Subject: <strong>'.$subject.'</strong></p1>
-                            <hr />
-                            <p1>Message:<br />'.$message.'</p1>"
+                            "type": "text/plain",
+                            "value": "Hello from Heroku"
                         }]
             }');
                 
