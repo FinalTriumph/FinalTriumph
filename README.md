@@ -1,3 +1,3 @@
 Personal Website
 
-Running in test mode at http://www.finaltriumph.eu/
+Running at http://www.finaltriumph.eu/
