@@ -29,7 +29,11 @@ class Contact extends Controller {
             $mail->Port = '465';
             $mail->isHTML();
             $mail->Username = 'finaltriumph.es@gmail.com';
-            $mail->Password = $password;
+            /* Cloud9
+            $mail->Password = $password;*/
+            //Heroku
+            $mail->Password = getenv('HTTP_MAIL_PASS');
+            ///////
             $mail->SetFrom('finaltriumph.es@gmail.com');
             $mail->Subject = 'FT Mail';
             $mail->Body = '<p1>Name: <strong>'.$name.'</strong><br />
