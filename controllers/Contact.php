@@ -29,7 +29,7 @@ class Contact extends Controller {
                         },
                         "content": [{
                             "type": "text/html",
-                            "value": "<p1>Name: <strong>'.$name.'</strong><br />Email: <strong>'.$email.'</strong></p1><br /><p1>Subject: <strong>'.$subject.'</strong></p1><hr /><p1>Message:<br />'.str_replace('<br />', '\n', $message).'</p1>"
+                            "value": "<p1>Name: <strong>'.$name.'</strong><br />Email: <strong>'.$email.'</strong></p1><br /><p1>Subject: <strong>'.$subject.'</strong></p1><hr /><p1>Message:<br />'.str_replace('\n', '<br />', $message).'</p1>"
                         }]
             }');
                 
