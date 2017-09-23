@@ -17,6 +17,8 @@ class Contact extends Controller {
             
             require 'vendor/autoload.php';
             
+            $readyMessage = str_replace("\n", '<br />', $message);
+            
             $request_body = json_decode('{
                     "personalizations": [{
                             "to": [{
@@ -29,7 +31,7 @@ class Contact extends Controller {
                         },
                         "content": [{
                             "type": "text/html",
-                            "value": "<p1>Name: <strong>'.$name.'</strong><br />Email: <strong>'.$email.'</strong></p1><br /><p1>Subject: <strong>'.$subject.'</strong></p1><hr /><p1>Message:<br />'.nl2br($message).'</p1>"
+                            "value": "<p1>Name: <strong>'.$name.'</strong><br />Email: <strong>'.$email.'</strong></p1><br /><p1>Subject: <strong>'.$subject.'</strong></p1><hr /><p1>Message:<br />'.$readyMessage.'</p1>"
                         }]
             }');
                 
