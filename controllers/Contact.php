@@ -17,6 +17,39 @@ class Contact extends Controller {
             
             require 'vendor/autoload.php';
             
+            $request_body = json_decode('{
+                    "personalizations": [{
+                            "to": [{
+                                "email": "final_triumph@outlook.com"
+                            }],
+                            "subject": "FT Mail"
+                        }],
+                        "from": {
+                        "email": "no-reply@finaltriumph.eu"
+                        },
+                        "content": [{
+                            "type": "text/plain",
+                            "value": "<p1>Name: <strong>'.$name.'</strong><br />
+                            Email: <strong>'.$email.'</strong></p1><br />
+                            <p1>Subject: <strong>'.$subject.'</strong></p1>
+                            <hr />
+                            <p1>Message:<br />'.$message.'</p1>"
+                        }]
+            }');
+                
+            $apiKey = getenv('SENDGRID_API_KEY');
+            $sg = new \SendGrid($apiKey);
+                
+            $response = $sg->client->mail()->send()->post($request_body);
+            
+            if ($response->statusCode() == 202) {
+                echo 'Success';
+            } else {
+                echo "Error: Something went wrong, message wasn't sent. Status code: ".$response->statusCode();
+            }
+
+            /*
+            Cloud9 with PHPMailer
             require_once("./classes/MailPass.php");
             
             require_once('./classes/PHPMailer/PHPMailerAutoload.php');
@@ -26,17 +59,14 @@ class Contact extends Controller {
             $mail->isSMTP();
             $mail->SMTPAuth = true;
             $mail->SMTPSecure = 'ssl';
-            //Cloud9 $mail->Host = 'smtp.gmail.com';
-            $mail->Host = 'smtp.sendgrid.net';
+            $mail->Host = 'smtp.gmail.com';
             $mail->Port = '587';
             $mail->isHTML();
-            /* Cloud9
             $mail->Username = 'finaltriumph.es@gmail.com';
+            
             $password = MailPass::password();
+            
             $mail->Password = $password;
-            */
-            $mail->Username = getenv('SENDGRID_USERNAME');
-            $mail->Password = getenv('SENDGRID_PASSWORD');
             $mail->SetFrom('no-reply@finaltriumph.eu');
             $mail->Subject = 'FT Mail';
             $mail->Body = '<p1>Name: <strong>'.$name.'</strong><br />
@@ -50,7 +80,7 @@ class Contact extends Controller {
                 echo 'Success';
             } else {
                 echo "Error: Something went wrong, message wasn't sent";
-            }
+            }*/
         }
         
         session_destroy();
