@@ -1,3 +1,3 @@
-Personal Website
+Personal Website (previous version of finaltriumph.eu)
 
-Running at http://www.finaltriumph.eu/
+Running at https://finaltriumph.herokuapp.com/
